@@ -5,10 +5,11 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Axios from 'axios'
-
+import * as echarts from 'echarts'
 
 Vue.use(ElementUI)
 Vue.prototype.$axios = Axios
+Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 
 new Vue({
