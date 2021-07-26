@@ -1,12 +1,18 @@
 <template>
     <div class="root">
         <div class="chart" id="chart"></div>
+        <div>{{array}}{{reverse}}</div>
     </div>
 </template>
 
 <script>
 export default {
     name: "EchartsDemo",
+    data(){
+        return{
+            array: [1,2,3]
+        }
+    },
     mounted() {
         this.initChart();
     },
@@ -31,14 +37,19 @@ export default {
                 }]
             });
         }
+    },
+    computed:{
+        reverse(){
+            return _.reverse(this.array)
+        }
     }
 }
 </script>
 
 <style scoped lang="stylus">
     .root
-        width 100%
-        height 100%
+        width 800px
+        height 800px
         display flex
         justify-content center
         align-items center
