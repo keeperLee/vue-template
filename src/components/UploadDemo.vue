@@ -9,7 +9,8 @@
                     :on-preview="handlePreview"
                     :on-remove="handleRemove"
                     :file-list="fileList"
-                    :auto-upload="false">
+                    :auto-upload="false"
+                    :before-upload="beforeUpload">
                 <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
                 <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器
                 </el-button>
@@ -36,9 +37,20 @@ export default {
         },
         handlePreview(file) {
             console.log(file);
+        },
+        beforeUpload(file) {
+            // const isJPG = file.type === 'image/jpeg';
+            // const isLt2M = file.size / 1024 / 1024 < 2;
+            //
+            // if (!isJPG) {
+            //     this.$message.error('上传头像图片只能是 JPG 格式!');
+            // }
+            // if (!isLt2M) {
+            //     this.$message.error('上传头像图片大小不能超过 2MB!');
+            // }
+            // return isJPG && isLt2M;
         }
-    },
-    computed: {}
+    }
 }
 </script>
 

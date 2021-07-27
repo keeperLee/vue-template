@@ -50,6 +50,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../components/UploadDemo.vue')
   },
+  {
+    path: '/webSocketDemo',
+    name: 'WebSocketDemo',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../components/WebSocketDemo.vue')
+  }
 ]
 
 const router = new VueRouter({
