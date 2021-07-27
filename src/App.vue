@@ -5,7 +5,8 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/echarts">Echarts</router-link>|
       <router-link to="/element">Element</router-link>|
-      <router-link to="/slide">Slide</router-link>
+      <router-link to="/slide">Slide</router-link>|
+      <router-link to="/uploadDemo">UploadDemo</router-link>|
     </div>
     <router-view/>
   </div>
