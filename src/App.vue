@@ -4,13 +4,18 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>|
       <router-link to="/echarts">Echarts</router-link>|
-      <router-link to="/element">Element</router-link>
+      <router-link to="/element">Element</router-link>|
+      <router-link to="/slide">Slide</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="stylus">
+*
+    margin 0
+    padding 0
+    box-sizing border-box
 #app
   position absolute
   width 100%
