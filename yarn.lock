@@ -2725,6 +2725,13 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"cross-env@^7.0.3":
+  "integrity" "sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw=="
+  "resolved" "https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz"
+  "version" "7.0.3"
+  dependencies:
+    "cross-spawn" "^7.0.1"
+
 "cross-spawn@^6.0.0":
   "integrity" "sha1-Sl7Hxk364iw6FBJNus3uhG2Ay8Q="
   "resolved" "https://registry.nlark.com/cross-spawn/download/cross-spawn-6.0.5.tgz"
@@ -2739,6 +2746,15 @@
 "cross-spawn@^7.0.0":
   "integrity" "sha1-9zqFudXUHQRVUcF34ogtSshXKKY="
   "resolved" "https://registry.nlark.com/cross-spawn/download/cross-spawn-7.0.3.tgz"
+  "version" "7.0.3"
+  dependencies:
+    "path-key" "^3.1.0"
+    "shebang-command" "^2.0.0"
+    "which" "^2.0.1"
+
+"cross-spawn@^7.0.1":
+  "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
+  "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
   "version" "7.0.3"
   dependencies:
     "path-key" "^3.1.0"
@@ -5785,9 +5801,14 @@
   "resolved" "https://registry.npm.taobao.org/path-key/download/path-key-2.0.1.tgz?cache=0&sync_timestamp=1617971695678&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpath-key%2Fdownload%2Fpath-key-2.0.1.tgz"
   "version" "2.0.1"
 
-"path-key@^3.0.0", "path-key@^3.1.0":
+"path-key@^3.0.0":
   "integrity" "sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U="
   "resolved" "https://registry.npm.taobao.org/path-key/download/path-key-3.1.1.tgz?cache=0&sync_timestamp=1617971695678&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpath-key%2Fdownload%2Fpath-key-3.1.1.tgz"
+  "version" "3.1.1"
+
+"path-key@^3.1.0":
+  "integrity" "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
+  "resolved" "https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz"
   "version" "3.1.1"
 
 "path-parse@^1.0.6":
@@ -6891,8 +6912,8 @@
     "shebang-regex" "^1.0.0"
 
 "shebang-command@^2.0.0":
-  "integrity" "sha1-zNCvT4g1+9wmW4JGGq8MNmY/NOo="
-  "resolved" "https://registry.npm.taobao.org/shebang-command/download/shebang-command-2.0.0.tgz"
+  "integrity" "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="
+  "resolved" "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz"
   "version" "2.0.0"
   dependencies:
     "shebang-regex" "^3.0.0"
@@ -6903,8 +6924,8 @@
   "version" "1.0.0"
 
 "shebang-regex@^3.0.0":
-  "integrity" "sha1-rhbxZE2HPsrYQ7AwexQzYtTEIXI="
-  "resolved" "https://registry.npm.taobao.org/shebang-regex/download/shebang-regex-3.0.0.tgz"
+  "integrity" "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="
+  "resolved" "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   "version" "3.0.0"
 
 "shell-quote@^1.6.1":
@@ -7895,7 +7916,7 @@
   dependencies:
     "defaults" "^1.0.3"
 
-"webpack-bundle-analyzer@^3.8.0":
+"webpack-bundle-analyzer@^3.8.0", "webpack-bundle-analyzer@^3.9.0":
   "integrity" "sha1-9vlNsQj7V05BWtMT3kGicH0z7zw="
   "resolved" "https://registry.nlark.com/webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.9.0.tgz?cache=0&sync_timestamp=1621259099265&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack-bundle-analyzer%2Fdownload%2Fwebpack-bundle-analyzer-3.9.0.tgz"
   "version" "3.9.0"
@@ -8067,8 +8088,8 @@
     "isexe" "^2.0.0"
 
 "which@^2.0.1":
-  "integrity" "sha1-fGqN0KY2oDJ+ELWckobu6T8/UbE="
-  "resolved" "https://registry.npm.taobao.org/which/download/which-2.0.2.tgz"
+  "integrity" "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="
+  "resolved" "https://registry.npmjs.org/which/-/which-2.0.2.tgz"
   "version" "2.0.2"
   dependencies:
     "isexe" "^2.0.0"
