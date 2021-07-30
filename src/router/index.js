@@ -24,7 +24,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/EchartsDemo.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/echarts/EchartsDemo.vue')
   },
   {
     path: '/element',
@@ -32,7 +32,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/ElementDemo.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../components/element-ui/ElementDemo.vue')
   },
   {
     path: '/slide',
@@ -57,7 +57,15 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../components/WebSocketDemo.vue')
-  }
+  },
+  {
+    path: '/pagination',
+    name: 'Pagination',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../components/element-ui/PaginationDemo.vue')
+  },
 ]
 
 const router = new VueRouter({
