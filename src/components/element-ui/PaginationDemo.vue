@@ -1,15 +1,18 @@
 <template>
-    <div class="root">
+    <div class="root" id="pagination">
         <div class="el-el-pagination">
-            <el-table :header-cell-style="getRowClass"
+            <el-table :header-cell-style="headerCellStyle"
                       :data="tableData"
+                      :row-class-name="tableRowClass"
                       height="250"
                       border
                       style="width: 100%">
                 <el-table-column
                         prop="id"
                         label="id"
-                        width="180">
+                        width="180"
+                        show-overflow-tooltip
+                >
                 </el-table-column>
                 <el-table-column
                         prop="name"
@@ -51,7 +54,15 @@ export default {
         this.queryUserByPagination(this.currentPage);
     },
     methods: {
-        getRowClass({row, column, rowIndex, columnIndex}) {
+        tableRowClass({ row, rowIndex }) {
+            if(rowIndex%2 ===0){
+                //返回具体的类名，类名要在css中存在
+                return 'pink'
+            } else {
+                return 'blue'
+            }
+        },
+        headerCellStyle({row, column, rowIndex, columnIndex}) {
             if (rowIndex === 0) {
                 return 'background:#c90a5b;color:#fff;text-align:center;font-size:9px;font-weight:500;'
             } else {
@@ -89,12 +100,10 @@ export default {
 </script>
 
 <style lang="stylus">
-.root
+#pagination
     position: relative;
     width 50%
     height 100%
-    .gutter
-        width 0
     .el-el-pagination
         position relative
         margin-top 100px
@@ -108,6 +117,19 @@ export default {
     .el-table__body-wrapper::-webkit-scrollbar-thumb {
         background-color: #ddd;
         border-radius: 6px;
-}
+    }
+    //设置鼠标悬浮行的样式
+    .el-table--enable-row-hover .el-table__body tr:hover>td {
+        background-color: #dfd21a;
+    }
+    .el-table__body tr.current-row>td{
+        background-color: #f1471c !important;
+    }
+    .pink{
+        background pink
+    }
+    .blue{
+        background cornflowerblue
+    }
 
 </style>
