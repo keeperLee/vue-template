@@ -110,13 +110,14 @@ export default {
         height auto
     // 滚动条的宽度
     .el-table__body-wrapper::-webkit-scrollbar {
-        width: 12px; // 横向滚动条
-        height: 12px; // 纵向滚动条 必写
+        width: 10px; // 横向滚动条
+        height: 10px; // 纵向滚动条 必写
     }
     // 滚动条的滑块
     .el-table__body-wrapper::-webkit-scrollbar-thumb {
-        background-color: #ddd;
-        border-radius: 6px;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        margin-left :-5px;
     }
     //设置鼠标悬浮行的样式
     .el-table--enable-row-hover .el-table__body tr:hover>td {
