@@ -131,5 +131,20 @@ export default {
     .blue{
         background cornflowerblue
     }
+    .el-table {
+        border: 0;
+        th,tr,td{
+            border: 0;
+        }
+        &::before {
+            height: 0px;
+        }
+        &::after {
+            width: 0;
+        }
+        .el-table__fixed:before {
+            height: 0;
+        }
+    }
 
 </style>
