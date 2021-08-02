@@ -1,11 +1,11 @@
 <template>
     <div class="root">
         <div class="el-el-pagination">
-            <el-table
-                    :data="tableData"
-                    height="250"
-                    border
-                    style="width: 100%">
+            <el-table :header-cell-style="getRowClass"
+                      :data="tableData"
+                      height="250"
+                      border
+                      style="width: 100%">
                 <el-table-column
                         prop="id"
                         label="id"
@@ -39,59 +39,41 @@
 <script>
 export default {
     name: "ElementDemo",
-    data(){
-        return{
-            tableData:[],
-            pageSize:3,
-            currentPage:1,
-            totalSize:0
-            // tableData: [{
-            //     date: '2016-05-03',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-02',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-04',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-01',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-08',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-06',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }, {
-            //     date: '2016-05-07',
-            //     name: '王小虎',
-            //     address: '上海市普陀区金沙江路 1518 弄'
-            // }]
+    data() {
+        return {
+            tableData: [],
+            pageSize: 5,
+            currentPage: 1,
+            totalSize: 0
         }
     },
     mounted() {
         this.queryUserByPagination(this.currentPage);
     },
     methods: {
+        getRowClass({row, column, rowIndex, columnIndex}) {
+            if (rowIndex === 0) {
+                return 'background:#c90a5b;color:#fff;text-align:center;font-size:9px;font-weight:500;'
+            } else {
+                return ''
+            }
+        }
+        ,
         handleCurrentChange(val) {
             console.log(`当前页: ${val}`);
             this.currentPage = val;
             this.queryUserByPagination(this.currentPage);
-        },
+        }
+        ,
         queryUserByPagination(pageIndex) {
             let that = this;
-            this.$axios.get("http://localhost:8083/emp/getAllEmpByPage",{params:{
-                    pageIndex:pageIndex,
-                    pageSize:that.pageSize
-                }}).then(function (response) {
-                console.log(response);
+            this.$axios.get("http://localhost:8083/emp/getAllEmpByPage", {
+                params: {
+                    pageIndex: pageIndex,
+                    pageSize: that.pageSize
+                }
+            }).then(function (response) {
+                // console.log(response);
                 // handle success
                 that.tableData = response.data.list;
                 that.totalSize = response.data.totalSize;
@@ -106,12 +88,26 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
-    .root
-        position: relative;
-        width 100%
-        height 100%
-        .el-el-container
-            position relative
+<style lang="stylus">
+.root
+    position: relative;
+    width 50%
+    height 100%
+    .gutter
+        width 0
+    .el-el-pagination
+        position relative
+        margin-top 100px
+        height auto
+    // 滚动条的宽度
+    .el-table__body-wrapper::-webkit-scrollbar {
+        width: 12px; // 横向滚动条
+        height: 12px; // 纵向滚动条 必写
+    }
+    // 滚动条的滑块
+    .el-table__body-wrapper::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 6px;
+}
 
 </style>
