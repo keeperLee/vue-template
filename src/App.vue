@@ -9,6 +9,7 @@
       <router-link to="/slide">Slide</router-link>|
       <router-link to="/uploadDemo">UploadDemo</router-link>|
       <router-link to="/webSocketDemo">WebSocketDemo</router-link>|
+      <router-link to="/Dthree">D3</router-link>|
     </div>
     <router-view/>
   </div>
