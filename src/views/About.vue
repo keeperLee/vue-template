@@ -5,6 +5,7 @@
         <el-button>element-ui的按钮</el-button>
         <el-button type="primary" icon="el-icon-search">搜索</el-button>
         <el-button type="primary" icon="el-icon-platform-eleme">饿了么</el-button>
+        {{getStateNumber}}
     </div>
 </template>
 
@@ -45,6 +46,11 @@ export default {
             }).then(function () {
                 // always executed
             });
+        }
+    },
+    computed:{
+        getStateNumber(){
+            return this.$store.getters.getNumberOne;
         }
     }
 }
