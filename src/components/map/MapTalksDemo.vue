@@ -3,7 +3,7 @@
         <div id="map" class="container">
 
         </div>
-        <div id="info"></div>
+<!--        <div id="info"></div>-->
     </div>
 
 </template>
@@ -17,7 +17,8 @@ export default {
         // this.drawBaseMap();
         // this.drawBaseMapArea();
         // this.preventZoom();
-        this.mapEventListener();
+        // this.mapEventListener();
+        this.addMarker();
     },
     methods: {
         //创建基层地图
@@ -98,6 +99,41 @@ export default {
                         ': click map on ' + param.coordinate.toFixed(5).toArray().join() + '</div>' +
                         infoDom.innerHTML;
             });
+        },
+       //地图标点
+        addMarker(){
+            const map = new maptalks.Map('map', {
+                center: [-0.113049, 51.498568],
+                zoom: 14,
+                baseLayer: new maptalks.TileLayer('base', {
+                    urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+                    subdomains: ['a','b','c','d'],
+                    attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+                })
+            });
+
+            const point = new maptalks.Marker(
+                    [-0.113049, 51.498568],
+                    {
+                        visible : true,
+                        editable : true,
+                        cursor : 'pointer',
+                        shadowBlur : 0,
+                        shadowColor : 'black',
+                        draggable : false,
+                        dragShadow : true, // display a shadow during dragging
+                        drawOnAxis : null,  // force dragging stick on a axis, can be: x, y
+                        symbol : {
+                            'textFaceName' : 'sans-serif',
+                            'textName' : '李健',
+                            'textFill' : '#34495e',
+                            'textHorizontalAlignment' : 'right',
+                            'textSize' : 40
+                        }
+                    }
+            );
+
+            new maptalks.VectorLayer('vector', point).addTo(map);
         }
     }
 }
