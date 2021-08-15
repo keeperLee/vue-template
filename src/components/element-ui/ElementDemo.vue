@@ -63,10 +63,35 @@ export default {
         }
     },
     mounted() {
-
+        const a = "{]"
+        this.stack(a);
     },
     methods:{
+      stack(s){
+          const stack = [];
+          for( let i = 0 ; i < s.length; i ++){
+            debugger
+            if(s[i]==='(' || s[i]=== '{' || s[i]==='['){
+              stack.push(s[i]);
+            }else{
+              if(stack.length === 0){
+                return false;
+              }
+              const front = stack.pop();
+              if(front === '(' &&  s[i] !== ')'){
+                return false;
+              }
+              if(front === '{' && s[i] !== '}' ){
+                return false;
+              }
+              if(front === '[' && s[i] !== ']' ){
+                return false;
+              }
 
+            }
+          }
+          return stack.length === 0;
+      }
     },
     computed:{
         reverse(){
