@@ -89,6 +89,14 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "about" */ '../components/map/MapTalksDemo.vue')
     },
+    {
+        path: '/stringFormatter',
+        name: 'StringFormatter',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "about" */ '../components/StringFormatter.vue')
+    },
 ]
 
 const router = new VueRouter({

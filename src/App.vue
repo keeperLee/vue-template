@@ -11,7 +11,8 @@
       <router-link to="/webSocketDemo">WebSocketDemo</router-link>|
       <router-link to="/Dthree">D3</router-link>|
       <router-link to="/carouse">Carouse</router-link>|
-      <router-link to="/mapTalksDemo">MapTalksDemo</router-link>
+      <router-link to="/mapTalksDemo">MapTalksDemo</router-link>|
+      <router-link to="/stringFormatter">StringFormatter</router-link>|
 <!--        <el-card shadow="hover" style="width: 100px;height: 100px">-->
 <!--            总是显示-->
 <!--        </el-card>-->
