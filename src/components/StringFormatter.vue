@@ -1,7 +1,7 @@
 <template>
     <div class="root">
         <div class="StringFormatter">
-            <div class="show">{{formatterString}}</div>
+            <div class="show" style="white-space: pre-wrap">{{formatterString}}</div>
         </div>
     </div>
 </template>
@@ -19,10 +19,7 @@ export default {
     },
     mounted() {
         // this.draw();
-        this.formatterString = "110.99999999,31.4343243241324132," +
-                "34.143324234,23.3243241234432," +
-                "21.324324234,13.12343243244," +
-                "77.324324234,66.12343243244"
+        this.formatterString = `110.99999999,\n31.4343243241324132,34.143324234,23.3243241234432,21.324324234,13.12343243244,77.324324234,66.12343243244`
         let value = this.formatterString;
         setTimeout(()=>this.formatter(value),5000)
 
