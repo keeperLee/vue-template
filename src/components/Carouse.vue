@@ -5,6 +5,12 @@
         <h3>{{ item }}</h3>
       </el-carousel-item>
     </el-carousel>
+
+    <div class="float-circle" >
+      <div class="normal"></div>
+      <div class="normal"></div>
+      <div class="active"></div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +26,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 .hello
+    position relative
     width 500px
     height 500px
     .el-carousel__item h3
@@ -34,4 +41,20 @@ export default {
 
     .el-carousel__item:nth-child(2n+1)
         background-color: #d3dce6;
+    .float-circle
+        width 50px
+        height 10px
+        display flex
+        justify-content space-around
+        align-items center
+        .normal
+            width 10px
+            height 10px
+            border-radius: 50%
+            background gray
+        .active
+            width 10px
+            height 10px
+            border-radius: 50%
+            background orange
 </style>
