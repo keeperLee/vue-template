@@ -8,6 +8,7 @@
     "analyzer": "cross-env use_analyzer=true npm run serve"
   },
   "dependencies": {
+    "@antv/g6": "^4.3.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.3",

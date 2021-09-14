@@ -3,7 +3,7 @@
         <div id="map" class="container">
 
         </div>
-<!--        <div id="info"></div>-->
+        <div id="info">{{extent}}</div>
     </div>
 
 </template>
@@ -13,23 +13,28 @@ import * as maptalks from 'maptalks';
 
 export default {
     name: 'MapTalksDemo',
+    data(){
+        return {
+            extent:null
+        }
+    },
     mounted() {
         // this.drawBaseMap();
         // this.drawBaseMapArea();
         // this.preventZoom();
         // this.mapEventListener();
-        // this.addMarker();
+        this.addMarker();
         // this.addLine();
         // this.addPolygon();
         // this.addGeometryCollection();
-        this.flashItem();
+        // this.flashItem();
     },
     methods: {
         //创建基层地图
         drawBaseMap() {
             const map = new maptalks.Map('map', {
                 center: [113.27, 23.13],
-                zoom: 16, //放大倍数
+                zoom: 16, //放大倍数 ,数值越大，地标越清晰
                 baseLayer: new maptalks.TileLayer('base', {
                     urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                     subdomains: ['a', 'b', 'c', 'd'],
@@ -40,7 +45,7 @@ export default {
         //限制地图区域,框选区域
         drawBaseMapArea() {
             const map = new maptalks.Map('map', {
-                center: [113.27, 23.13],
+                center: [114.27, 23.13],
                 centerCross: true,//展示屏幕中心的准心
                 zoom: 16, //放大倍数
                 baseLayer: new maptalks.TileLayer('base', {
@@ -54,7 +59,9 @@ export default {
             });
 
             const extent = map.getExtent();
-            // console.log(extent,'extent');
+            console.log(extent,'extent');
+            console.log(extent.toArray(),'extent.toArray()');
+            this.extent = extent;
             // console.log(extent.toArray(),'extent.toArray()');
             // set map's max extent to map's extent at zoom 14
             map.setMaxExtent(extent);
@@ -124,7 +131,7 @@ export default {
                         cursor : 'pointer',
                         shadowBlur : 0,
                         shadowColor : 'black',
-                        draggable : false,
+                        draggable : true,
                         dragShadow : true, // display a shadow during dragging
                         drawOnAxis : null,  // force dragging stick on a axis, can be: x, y
                         symbol : {
@@ -289,7 +296,11 @@ export default {
             );
 
             new maptalks.VectorLayer('vector', marker).addTo(map);
-
+                // new maptalks.ImageLayer("images", [{
+                //     url : 'https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF',
+                //     extent: [100, 10, 120, 20],
+                //     opacity : 1
+                // }]).addTo(map);
             marker.flash(
                     500,  //flash interval in ms
                     10,    // count

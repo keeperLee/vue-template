@@ -97,6 +97,14 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "about" */ '../components/StringFormatter.vue')
     },
+    {
+        path: '/gsix',
+        name: 'gsix',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "about" */ '../components/GSixDemo.vue')
+    },
 ]
 
 const router = new VueRouter({
