@@ -1,5 +1,7 @@
 <template>
     <div class="about">
+
+        <div class="base"></div>
         <h1>This is an about page</h1>
         <i class="el-icon-share" style="color: red"></i>
         <el-button>element-ui的按钮</el-button>
@@ -92,6 +94,24 @@ export default {
 }
 </script>
 
-<style scoped lang="">
+<style scoped lang="stylus">
+    .base
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        background-color: #0EA9FF;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #5daf34;
+        transition-property: width, height, background-color, border-width;
+        transition-duration: 2s;
+        transition-timing-function: ease-in;
+        transition-delay: 500ms;
+        &:hover
+            width: 200px;
+            height: 200px;
+            background-color: #5daf34;
+            border-width: 10px;
+            border-color: #3a8ee6;
 
 </style>
